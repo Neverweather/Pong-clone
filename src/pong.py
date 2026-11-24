@@ -76,7 +76,7 @@ class ball(object): # Ball class
         self.AdaptiveSpeedIncrAmout = 0.5
         self.AdaptiveSpeedIncrAmountOV = 0
 
-    def draw(self): # Draws the bat adn it's black outline (The black outline is to see it clear when it next to the bar)
+    def draw(self): # Draws the bat and it's black outline (The black outline is to see it clear when it next to the bar)
         pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), self.radius + self.outline_size)
         pygame.draw.circle(screen, ColorForBatsAndCircle, (self.x, self.y), self.radius)
 
@@ -180,7 +180,7 @@ def ButtonMaker(x, y, w, h, PlaceHolderText): # Makes a button
     Button = ui.elements.UIButton(relative_rect=pygame.Rect((x, y), (w, h)), text=PlaceHolderText, manager=UImanager)
     return Button
 
-class HollowRect(object): # Makes a rectangle (no it's not hollow knight)
+class HollowRect(object): # Makes a rectangle 
     def __init__(self, x, y, w, h, TextX, TextY, font):
         self.x = x
         self.y = y
