@@ -73,10 +73,10 @@ class ball(object): # Ball class
         self.speed = 1
         self.outline_size = outline_size
         self.AdaptiveSpeed = False
-        self.AdaptiveSpeedIncrAmout = 0.5
+        self.AdaptiveSpeedIncrAmount = 0.5
         self.AdaptiveSpeedIncrAmountOV = 0
 
-    def draw(self): # Draws the bat and it's black outline (The black outline is to see it clear when it next to the bar)
+    def draw(self): # Draws the bat adn it's black outline (The black outline is to see it clear when it next to the bar)
         pygame.draw.circle(screen, (0, 0, 0), (self.x, self.y), self.radius + self.outline_size)
         pygame.draw.circle(screen, ColorForBatsAndCircle, (self.x, self.y), self.radius)
 
@@ -92,7 +92,8 @@ class ball(object): # Ball class
     def ReflectHorizon(self): # reflects over the y axis (I know horizon is wrong, I'm too lazy to fix it)
         self.direction = (180 - self.direction) % 360
         if self.AdaptiveSpeed: # Checks if the adaptive speed is on and makes it go up
-            self.AdaptiveSpeedIncrAmountOV += self.AdaptiveSpeedIncrAmout
+            self.AdaptiveSpeedIncrAmountOV += self.AdaptiveSpeedIncrAmount
+            ball.speed += ball.AdaptiveSpeedIncrAmount
 
     def blink(self): # Makes the ball blink twice
         for i in range(2): 
@@ -180,7 +181,7 @@ def ButtonMaker(x, y, w, h, PlaceHolderText): # Makes a button
     Button = ui.elements.UIButton(relative_rect=pygame.Rect((x, y), (w, h)), text=PlaceHolderText, manager=UImanager)
     return Button
 
-class HollowRect(object): # Makes a rectangle 
+class HollowRect(object): # Makes a rectangle (no it's not hollow knight)
     def __init__(self, x, y, w, h, TextX, TextY, font):
         self.x = x
         self.y = y
@@ -229,7 +230,8 @@ def DrawBakedGame(Ballx, Bally, Bat1y, Bat2y): # Draws the frozen-in-time game i
     Bat2.draw()
     ball.draw()
 
-def StartGame(): # Puts everything in the right place to start the gmae
+def StartGame(): # Puts everything in the right place to start the game
+    global Player1Score, Player2Score
     ball.x, ball.y = windowW / 2 - 12.8, windowH / 2
     Bat1.x, Bat1.y = windowW // 16, windowH / 2
     Bat2.x, Bat2.y = windowW - windowW // 16, windowH / 2 
@@ -472,6 +474,8 @@ while run_window:
             if k[pygame.K_b]:
                 SendBall = True
                 ShouldSendBall = False
+            if k[pygame.K_p]:
+                print(ball.speed)
 
         # Checks if one of the players won
         if Player1Score == WinningScore:
