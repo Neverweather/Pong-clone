@@ -6,9 +6,9 @@ You need to install pygame-ce and pygame_gui with pip like this
 
 How to install pygame_gui (Note, this will also install pygame-ce which is normal and what this pong clone uses):
 
-``bash
+```bash
 pip install pygame_gui
-``
+```
 
 To clone my repository: 
 
