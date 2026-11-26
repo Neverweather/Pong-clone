@@ -19,5 +19,5 @@ And to run it:
 
 ```bash
 python3 src/pong.py
-``
+```
 Now bring a compagnion and have fun!
