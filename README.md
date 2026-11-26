@@ -5,8 +5,10 @@ Thanks to codeman38 for making the font (I don't know him personally I found it 
 You need to install pygame-ce and pygame_gui with pip like this
 
 How to install pygame_gui (Note, this will also install pygame-ce which is normal and what this pong clone uses):
+
 ``bash
 pip install pygame_gui
+
 ```
 
 To clone my repository
