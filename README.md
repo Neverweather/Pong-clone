@@ -8,6 +8,7 @@ How to install pygame_gui (Note, this will also install pygame-ce which is norma
 ``bash
 pip install pygame_gui
 ```
+
 To clone my repository
 
 ```bash
