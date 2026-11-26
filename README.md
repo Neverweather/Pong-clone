@@ -16,6 +16,7 @@ To clone my repository:
 git clone https://github.com/Neverweather/Pong-clone
 ```
 And to run it:
+
 ```bash
 python3 src/pong.py
 ``
